@@ -135,6 +135,28 @@
     }
   },
   {
+    "_id": "batchJobLogSearch",
+    "_type": "search",
+    "_source": {
+      "title": "batchJobLogSearch",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "threadId",
+        "batchMessage",
+        "sequence"
+      ],
+      "sort": [
+        "sequence",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"type:batchjob_log OR type:liberty_batchjoblog\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
     "_id": "gcHeap",
     "_type": "visualization",
     "_source": {

@@ -142,12 +142,13 @@
       "description": "",
       "hits": 0,
       "columns": [
-        "threadId",
-        "batchMessage",
-        "sequence"
+        "jobName",
+        "instanceId",
+        "executionId",
+        "message"
       ],
       "sort": [
-        "sequence",
+        "instanceId",
         "desc"
       ],
       "version": 1,

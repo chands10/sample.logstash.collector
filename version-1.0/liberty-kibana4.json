@@ -6,7 +6,7 @@
       "title": "Liberty-K4-20160216",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[{\"col\":1,\"id\":\"serversTable\",\"panelIndex\":1,\"row\":1,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"accessLogServersPie\",\"panelIndex\":2,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"hotMessages\",\"panelIndex\":3,\"row\":3,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"hotResponseCodes\",\"panelIndex\":4,\"row\":3,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"slowHits\",\"panelIndex\":5,\"row\":3,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"slowGC\",\"panelIndex\":6,\"row\":3,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Message-Graph\",\"panelIndex\":7,\"row\":6,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"gcDuration\",\"panelIndex\":8,\"row\":6,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"gcHeap\",\"panelIndex\":9,\"row\":6,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"accessLogElapsedTimeTopURLGraph\",\"panelIndex\":10,\"row\":9,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"accessLogResponseCodeGraph\",\"panelIndex\":11,\"row\":9,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"accessLogElapsedTimeGraph\",\"panelIndex\":12,\"row\":9,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Trace-Graph\",\"panelIndex\":13,\"row\":12,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"FFDC-Graph\",\"panelIndex\":14,\"row\":12,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":13,\"id\":\"batchJobLogInstanceIdGraph\",\"panelIndex\":11,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"}]",
+      "panelsJSON": "[{\"col\":1,\"id\":\"serversTable\",\"panelIndex\":1,\"row\":1,\"size_x\":9,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"accessLogServersPie\",\"panelIndex\":2,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"hotMessages\",\"panelIndex\":3,\"row\":3,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"hotResponseCodes\",\"panelIndex\":4,\"row\":3,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"slowHits\",\"panelIndex\":5,\"row\":3,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"slowGC\",\"panelIndex\":6,\"row\":3,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Message-Graph\",\"panelIndex\":7,\"row\":6,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"gcDuration\",\"panelIndex\":8,\"row\":6,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"gcHeap\",\"panelIndex\":9,\"row\":6,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"accessLogElapsedTimeTopURLGraph\",\"panelIndex\":10,\"row\":9,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"accessLogResponseCodeGraph\",\"panelIndex\":11,\"row\":9,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"accessLogElapsedTimeGraph\",\"panelIndex\":12,\"row\":9,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Trace-Graph\",\"panelIndex\":13,\"row\":12,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"FFDC-Graph\",\"panelIndex\":14,\"row\":12,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"}]",
       "optionsJSON": "{\"darkTheme\":true}",
       "uiStateJSON": "{}",
       "version": 1,
@@ -135,29 +135,6 @@
     }
   },
   {
-    "_id": "batchJobLogSearch",
-    "_type": "search",
-    "_source": {
-      "title": "batchJobLogSearch",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "jobName",
-        "instanceId",
-        "executionId",
-        "message"
-      ],
-      "sort": [
-        "instanceId",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"logstash-*\",\"query\":{\"query_string\":{\"query\":\"type:batchjob_log OR type:liberty_batchjoblog\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
-      }
-    }
-  },
-  {
     "_id": "gcHeap",
     "_type": "visualization",
     "_source": {
@@ -233,21 +210,6 @@
     }
   },
   {
-    "_id": "batchJobLogInstanceIdGraph",
-    "_type": "visualization",
-    "_source": {
-      "title": "batchJobLogInstanceIdGraph",
-      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"datetime\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"instanceId\",\"size\":10,\"order\":\"asc\",\"orderBy\":\"_term\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "batchJobLogSearch",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "accessLogElapsedTimeTopURLGraph",
     "_type": "visualization",
     "_source": {
@@ -286,21 +248,6 @@
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "accessLogSearch",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "batchJobLogCount",
-    "_type": "visualization",
-    "_source": {
-      "title": "batchJobLogCount",
-      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "batchJobLogSearch",
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[]}"

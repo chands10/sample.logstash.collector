@@ -1,5 +1,30 @@
 [
   {
+    "_id": "a9f23b40-af11-11e9-a7c0-f9b8f503b71c",
+    "_type": "visualization",
+    "_source": {
+      "title": "batchJobLogRecordGraph",
+      "visState": "{\n  \"title\": \"batchJobLogRecord-Graph\",\n  \"type\": \"line\",\n  \"params\": {\n    \"type\": \"line\",\n    \"grid\": {\n      \"categoryLines\": false\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"truncate\": 100\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Batch Job Log Records Count\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"line\",\n        \"mode\": \"stacked\",\n        \"data\": {\n          \"label\": \"Batch Job Log Records Count\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"interpolate\": \"linear\"\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"addTimeMarker\": false\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Batch Job Log Records Count\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"datetime\",\n        \"timeRange\": {\n          \"from\": \"now-2M\",\n          \"to\": \"now\"\n        },\n        \"useNormalizedEsInterval\": true,\n        \"interval\": \"auto\",\n        \"drop_partials\": false,\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": \"!loggerName:demo_logger\"\n            },\n            \"label\": \"Batch Job Log Records\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": []\n}"
+      },
+      "savedSearchRefName": "search_0"
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "search_0",
+        "id": "batchJobLogSearch",
+        "type": "search"
+      }
+    ]
+  },
+  {
     "_id": "8e0f83b0-af1b-11e9-a7c0-f9b8f503b71c",
     "_type": "visualization",
     "_source": {
@@ -30,31 +55,6 @@
     "_source": {
       "title": "batchJobLogChunkCount",
       "visState": "{\"title\":\"batchJobLogChunkCount\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"loggerName:demo_logger\"},\"label\":\"batchJobLogChunks\"}]}}]}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
-      },
-      "savedSearchRefName": "search_0"
-    },
-    "_migrationVersion": {
-      "visualization": "7.0.1"
-    },
-    "_references": [
-      {
-        "name": "search_0",
-        "type": "search",
-        "id": "batchJobLogSearch"
-      }
-    ]
-  },
-  {
-    "_id": "a9f23b40-af11-11e9-a7c0-f9b8f503b71c",
-    "_type": "visualization",
-    "_source": {
-      "title": "batchJobLogRecord-Graph",
-      "visState": "{\"title\":\"batchJobLogRecord-Graph\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Batch Job Log Records Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"stacked\",\"data\":{\"label\":\"Batch Job Log Records Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Batch Job Log Records Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"datetime\",\"timeRange\":{\"from\":\"now-2M\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"!loggerName:demo_logger\"},\"label\":\"Batch Job Log Records\"}]}}]}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
